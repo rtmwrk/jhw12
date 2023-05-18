@@ -8,42 +8,42 @@ public class CashbackHackServiceTest {
     // Метод эквивалентных значений:
     // - amount < boundary
     // Тест должен проходить без ошибок
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void shouldFuncPositiveTestIfAmountLessBoundary() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(900);
         int expected = 100;
 
-        org.testng.Assert.assertEquals(actual,expected);
+        org.junit.Assert.assertEquals(expected,actual);
     }
 
     // Позитивный функциональный тест
     // Метод эквивалентных значений:
     // - amount > boundary, но amount < 2*boundary
     // Тест должен проходить без ошибок
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void shouldFuncPositiveTestIfAmountMoreBoundary() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(1_800);
         int expected = 200;
 
-        org.testng.Assert.assertEquals(actual,expected);
+        org.junit.Assert.assertEquals(expected,actual);
     }
 
     // Позитивный функциональный тест
     // Метод граничных значений:
     // - amount = boundary - 1
     // Тест должен проходить без ошибок
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void shouldFuncPositiveTestIfAmountLessBoundaryByOne() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(999);
         int expected = 1;
 
-        org.testng.Assert.assertEquals(actual,expected);
+        org.junit.Assert.assertEquals(expected,actual);
     }
 
     // Позитивный функциональный тест
@@ -51,28 +51,28 @@ public class CashbackHackServiceTest {
     // - amount = boundary
     // Тест должен проходить без ошибок, но в следствие дефекта
     // тест не проходит
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void shouldFuncPositiveTestIfAmountEqualBoundary() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(1_000);
         int expected = 0;
 
-        org.testng.Assert.assertEquals(actual,expected);
+        org.junit.Assert.assertEquals(expected,actual);
     }
 
     // Позитивный функциональный тест
     // Метод граничных значений:
     // - amount = boundary + 1
     // Тест должен проходить без ошибок
-    @org.testng.annotations.Test
+    @org.junit.Test
     public void shouldFuncPositiveTestIfAmountMoreBoundaryByOne() {
         CashbackHackService cashback = new CashbackHackService();
 
         int actual = cashback.remain(1_001);
         int expected = 999;
 
-        org.testng.Assert.assertEquals(actual,expected);
+        org.junit.Assert.assertEquals(expected,actual);
     }
 
     // В описанных выше тестах мы проверяли логику работы метода "remain" сервисного класса.
